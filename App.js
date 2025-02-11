@@ -1,11 +1,14 @@
+import React from "react";
+import ReactDom from 'react-dom';
+
 const parent = React.createElement("div", { id: "parent" }, [
-  react.createElement("div", { id: "child" }, [
-    react.createElement("h1", {}, "Hello World!"),
-    react.createElement("h2", {}, "Hello I am H2!"),
+  React.createElement("div", { id: "child" }, [
+    React.createElement("h1", {}, "Hello World!"),
+    React.createElement("h2", {}, "Hello I am H2!"),
   ]),
-  react.createElement("div", { id: "child" }, [
-    react.createElement("h1", {}, "Hello World!"),
-    react.createElement("h2", {}, "Hello I am H2!"),
+  React.createElement("div", { id: "child2" }, [
+    React.createElement("h1", {}, "Hello World!2"),
+    React.createElement("h2", {}, "Hello I am H2!2"),
   ]),
 ]);
 
