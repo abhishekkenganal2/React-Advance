@@ -1,0 +1,42 @@
+export const restuNames = [
+    {
+      id: "001",
+      img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/7/16/87e56c63-b521-4257-96ae-a42229b92009_10576.jpg",
+      name: "Meghana Shop",
+      location: "Chennai",
+      rating: 5,
+      price: 230,
+    },
+    {
+      id: "002",
+      img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/1/21/ccb97e93-5b1a-4e18-9dd7-3f635e2d5e94_656392.JPG",
+      name: "Mysore Resto",
+      location: "Bangalore",
+      rating: 4,
+      price: 150,
+    },
+    {
+      id: "003",
+      img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ntjshqsv2k7vxtv7vmib",
+      name: "Bijapur Resto",
+      location: "Bijapur",
+      rating: 3,
+      price: 100,
+    },
+    {
+      id: "004",
+      img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/5/19/4ec6a5b6-7c8d-4e10-b8a3-317922e419da_750225.JPG",
+      name: "Kamat Resto",
+      location: "Bangalore",
+      rating: 4,
+      price: 200,
+    },
+    {
+      id: "005",
+      img:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/gjcslopkyvnsc1gjjguq",
+      name: "Kantu Tea Stall",
+      location: "Bangalore",
+      rating: 5,
+      price: 20,
+    },
+  ];
