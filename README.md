@@ -20,7 +20,10 @@ layoout
 
 - types of Exports:
 
-a. default export/import
+a. Default export/import
+export default Resto;
+import Resto from "./Resto";
 
-
-b. 
+b. Named export/import
+export const Resto = "sasdl asda";
+import {Resto} from "./Resto";
