@@ -40,3 +40,5 @@ export const restuNames = [
       price: 20,
     },
   ];
+
+export const HeaderLogo = "https://dvm9jp3urcf0o.cloudfront.net/logo-ideas/business-logo-ideas/Pro/food-delivery-business.png"
