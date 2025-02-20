@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import { restuNames } from "../utils/data";
+import { restaurants } from "../utils/data";
 
 const Body = () => {
     return (
@@ -9,8 +9,8 @@ const Body = () => {
           <button>Search</button>
         </div>
         <div className="res-container">
-          {restuNames.map((data) => (
-            <RestaurantCard key={data.id} resData={data}/>
+          {restaurants.map((data) => (
+            <RestaurantCard key={data.info.id} resData={data}/>
           ))}
         </div>
       </div>

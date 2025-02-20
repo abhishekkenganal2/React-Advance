@@ -1,5 +1,5 @@
 const RestaurantCard = (props) => {
-    const {resData} = props;
+    const {res} = props;
     const {img,name,location,rating,price} = resData
    
     console.log(resData)
