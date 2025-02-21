@@ -31,8 +31,9 @@
 
 .res-card {
     padding: 5px;
-    width: 220px;
-    height: 300px;
+    width: 17%;
+    margin: 5px;
+    height: 400px;
     box-shadow: rgb(255, 193, 122) 2px 2px 7px;
     border-radius: 5px;
 }
