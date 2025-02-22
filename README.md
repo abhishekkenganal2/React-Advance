@@ -27,3 +27,9 @@ import Resto from "./Resto";
 b. Named export/import
 export const Resto = "sasdl asda";
 import {Resto} from "./Resto";
+
+## react hooks
+- Normal JS utility function written by facebook developers.
+
+1. useState() - Superpowerful state variables in reaact.
+2. useEffect()

@@ -1,3 +1,7 @@
+export const HeaderLogo = "https://dvm9jp3urcf0o.cloudfront.net/logo-ideas/business-logo-ideas/Pro/food-delivery-business.png"
+
+export const CDN_url = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
+
 export const restaurants = [
     {
         "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
@@ -1423,4 +1427,3 @@ export const restaurants = [
     }
 ]
 
-export const HeaderLogo = "https://dvm9jp3urcf0o.cloudfront.net/logo-ideas/business-logo-ideas/Pro/food-delivery-business.png"
