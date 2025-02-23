@@ -5,6 +5,8 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
+  const [filteredList,setFilteredList] = useState([]);
+  const [searchText, setSearchText] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -17,38 +19,59 @@ const Body = () => {
 
     const Json = await data.json();
 
-    console.log(
-      Json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards[1]
-        ?.card?.card?.restaurants
-    );
+    // console.log(
+    //   Json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards[1]
+    //     ?.card?.card?.restaurants
+    // );
     // Optional Chaining
     setResList(
       Json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards[1]
         ?.card?.card?.restaurants
     );
+    setFilteredList(Json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards[1]
+      ?.card?.card?.restaurants)
   };
 
   return (
     <div className="body">
       <div className="filter-search">
-        <input type="text" placeholder="Search for restaurants" />
-        <button className="search-btn">Search</button>
+        <input
+          type="text"
+          placeholder="Search for restaurants"
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
+        <button
+          className="search-btn"
+          onClick={() => {
+            const filterData = resList.filter((res) =>
+              res.info.name.toLowerCase().includes(searchText.toLowerCase())
+            );
+            console.log(filterData);
+
+            setFilteredList(filterData);
+          }}
+        >
+          Search
+        </button>
         <button
           className="filter-btn"
           onClick={() => {
-            setResList(resList.filter((res) => res.info.avgRating > 4.5));
+            setFilteredList(resList.filter((res) => res.info.avgRating > 4.5));
           }}
         >
           Top rated Restaurants
         </button>
       </div>
-      {resList.length === 0 ? (
-        <div style={{margin:30}}>
-         <Shimmer/>
+      {resList.length === 0 || filteredList.length === 0  ? (
+        <div style={{ margin: 30 }}>
+          <Shimmer />
         </div>
       ) : (
         <div className="res-container">
-          {resList.map((data) => (
+          {filteredList.map((data) => (
             <RestaurantCard key={data.info.id} resData={data} />
           ))}
         </div>

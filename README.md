@@ -58,3 +58,12 @@ End of Chapter 5
 We will learn how React talk to other world (for API's, database etc)
 
 2. useEffect()
+
+- use Shimmer instead of loading...
+
+- login to logout journey..
+
+- search bar working.
+- Js basics revised 
+
+End of Chapter 6
