@@ -31,7 +31,7 @@
 
 .res-card {
     padding: 5px;
-    width: 17%;
+    width: 22%;
     margin: 5px;
     height: 400px;
     box-shadow: rgb(255, 193, 122) 2px 2px 7px;
@@ -68,4 +68,8 @@
 .filter-search > button{
     margin: 0 5px;
     font-size: 15px;
+}
+
+.login{
+    padding: 0 20;
 }

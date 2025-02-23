@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-shimmer-effects": "^1.0.3"
   },
   "browsersList": [
     "last 10 versions"
