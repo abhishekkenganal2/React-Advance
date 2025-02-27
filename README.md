@@ -67,3 +67,25 @@ We will learn how React talk to other world (for API's, database etc)
 - Js basics revised 
 
 End of Chapter 6
+
+## Chapter 7
+
+- useEffect()
+- if no dependency array => useEffect is called on every render.
+ex: useEffect(() => {
+    fetchData();
+  });
+
+- if dependency array is [] => useEffect is called on initial render(just once)
+ex: useEffect(() => {
+    fetchData();
+  },[]);
+
+- If dependency array has [variable] => called everytime variable is updated.
+ex: useEffect(() => {
+    fetchData();
+  }, [variable]);
+
+1. Routing
+
+- install react-router-dom
