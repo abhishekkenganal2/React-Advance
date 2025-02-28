@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
 import AppLayout from "./components/AppLayout";
+import About from "./components/About";
+import Contacts from "./components/Contacts";
+import Error from "./components/Error";
+import Body from "./components/Body";
 
 // const parent = React.createElement("div", { id: "parent" }, [
 //   React.createElement("div", { id: "child" }, [
@@ -21,8 +26,29 @@ import AppLayout from "./components/AppLayout";
 //   </div>
 // ); // JSX for multiple element
 
-
+const appRouter = createBrowserRouter([
+    {
+      path:"/",
+      element: <AppLayout/>,
+      children:[
+        {
+          path:"/",
+          element:<Body />
+        },
+        {
+          path:"/about",
+          element:<About />
+        },
+        {
+          path:"/contact",
+          element:<Contacts />
+        }
+      ],
+      errorElement:<Error/>
+    },
+    
+  ])
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter}/>);

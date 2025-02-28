@@ -89,3 +89,19 @@ ex: useEffect(() => {
 1. Routing
 
 - install react-router-dom
+
+!!! note
+    rafce creates component for you
+
+- useRouteError: hook to handle errors in using react router.
+
+- Children router and Outlet router: works as a fetcher of components.
+
+- Link: Never use <a href=""> tag in react because it loads complete page, instead use <Link in=""> tag.
+
+FOR THIS REASON -> React is Single Page Application.
+
+### 2 types of routing in web app
+
+1. Client Side Routing: React routes.
+2. Server Side Routing: HTML <a> fetch.
