@@ -2,10 +2,12 @@ import RestaurantCard from "./RestaurantCard";
 // import { restaurants } from "../utils/data";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Body_API } from "../utils/data";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
-  const [filteredList,setFilteredList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState([]);
 
   useEffect(() => {
@@ -13,23 +15,17 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.960059122809971&lng=77.57337538383284&str=haldiram%27s%20restaurant&trackingId=9c438575-3bf9-4374-872e-ac769c08a6f4&submitAction=ENTER&queryUniqueId=4bbca8c1-74c3-e658-f254-9e77fa9b673e"
-    );
+    const data = await fetch(Body_API);
 
     const Json = await data.json();
 
-    // console.log(
-    //   Json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards[1]
-    //     ?.card?.card?.restaurants
-    // );
     // Optional Chaining
     setResList(
-      Json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards[1]
-        ?.card?.card?.restaurants
+      Json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setFilteredList(Json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards[1]
-      ?.card?.card?.restaurants)
+    setFilteredList(
+      Json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   return (
@@ -49,8 +45,6 @@ const Body = () => {
             const filterData = resList.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
-            console.log(filterData);
-
             setFilteredList(filterData);
           }}
         >
@@ -65,14 +59,16 @@ const Body = () => {
           Top rated Restaurants
         </button>
       </div>
-      {resList.length === 0 || filteredList.length === 0  ? (
+      {resList.length <= 0 || filteredList.length <= 0 ? (
         <div style={{ margin: 30 }}>
           <Shimmer />
         </div>
       ) : (
         <div className="res-container">
           {filteredList.map((data) => (
-            <RestaurantCard key={data.info.id} resData={data} />
+            <Link key={data.info.id} to={"/restaurant/" + data.info.id} style={{ textDecoration: "none",color:"black",width:"22%" }}>
+              <RestaurantCard resData={data} />
+            </Link>
           ))}
         </div>
       )}

@@ -6,6 +6,8 @@ import About from "./components/About";
 import Contacts from "./components/Contacts";
 import Error from "./components/Error";
 import Body from "./components/Body";
+import RestaurentMenu from "./components/RestaurantMenu";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 // const parent = React.createElement("div", { id: "parent" }, [
 //   React.createElement("div", { id: "child" }, [
@@ -42,6 +44,9 @@ const appRouter = createBrowserRouter([
         {
           path:"/contact",
           element:<Contacts />
+        },{
+          path:"/restaurant/:id",
+          element:<RestaurantMenu />
         }
       ],
       errorElement:<Error/>

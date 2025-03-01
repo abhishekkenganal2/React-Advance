@@ -70,7 +70,7 @@ End of Chapter 6
 
 ## Chapter 7
 
-- useEffect()
+#### useEffect()
 - if no dependency array => useEffect is called on every render.
 ex: useEffect(() => {
     fetchData();
@@ -86,14 +86,15 @@ ex: useEffect(() => {
     fetchData();
   }, [variable]);
 
-1. Routing
+### Routing
 
 - install react-router-dom
 
 !!! note
     rafce creates component for you
 
-- useRouteError: hook to handle errors in using react router.
+### useRouteError 
+- hook to handle errors in using react router.
 
 - Children router and Outlet router: works as a fetcher of components.
 
@@ -101,7 +102,10 @@ ex: useEffect(() => {
 
 FOR THIS REASON -> React is Single Page Application.
 
-### 2 types of routing in web app
+- 2 types of routing in web app
 
-1. Client Side Routing: React routes.
+1. Client Side Routing: <Outlet/> and <Link/>of React routes.
 2. Server Side Routing: HTML <a> fetch.
+
+### useParams
+- Helps to fetch dynamic data like "id" from API links which is passed before in router.

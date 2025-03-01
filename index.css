@@ -31,7 +31,7 @@
 
 .res-card {
     padding: 5px;
-    width: 22%;
+    width: 100%;
     margin: 5px;
     height: 400px;
     box-shadow: rgb(255, 193, 122) 2px 2px 7px;
@@ -40,6 +40,7 @@
 
 .res-card:hover {
     box-shadow: rgb(0, 0, 0) 2px 2px 10px;
+    cursor: pointer;
 }
 
 .res-logo{
