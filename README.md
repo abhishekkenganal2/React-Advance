@@ -109,3 +109,26 @@ FOR THIS REASON -> React is Single Page Application.
 
 ### useParams
 - Helps to fetch dynamic data like "id" from API links which is passed before in router.
+
+
+## Chapter 8
+
+- Class based components.
+
+- using props with this.
+- component rendering.
+- State creations
+
+Life Cycle of React component:
+1. Constructor is called.
+2. Render is called.
+3. componentDidMount is called.
+
+**VERY VERY IMPORTANT**
+- componentDidMount is used to call API's. Why ? because in react, render happens first, then API's calls happen so componentDidMount works at last.
+- 
+
+## Chapter 9
+
+- Single responsibility principle. - given each component indivisual work.
+- 
