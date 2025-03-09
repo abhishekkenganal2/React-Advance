@@ -8,17 +8,17 @@ const Header = () => {
   const onlineStatus = useOnlineStatuus();
 
   return (
-    <header className="header">
-      <div className="logo-container">
-        <img className="logo" src={HeaderLogo} alt="google" />
+    <header className="flex justify-between">
+      <div className="h-5">
+        <img className="w-26" src={HeaderLogo} alt="google" />
       </div>
       <div className="nav-items">
-        <ul>
-          <li>Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-          <li>Cart</li>
+        <ul className="flex p-4 m-4">
+          <li className="px-4">Status: {onlineStatus ? "🟢" : "🔴"}</li>
+          <li className="px-4"><Link to="/">Home</Link></li>
+          <li className="px-4"><Link to="/about">About Us</Link></li>
+          <li className="px-4"><Link to="/contact">Contact Us</Link></li>
+          <li className="px-4">Cart</li>
           <button className="login"
             onClick={() => {
               loginSwitch === "Login"
