@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Body_API } from "../utils/data";
 import { Link } from "react-router-dom";
+import useOnlineStatuus from "../utils/useOnlineStatuus";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState([]);
+
+  const onlineStatus = useOnlineStatuus();
 
   useEffect(() => {
     fetchData();
@@ -27,6 +30,8 @@ const Body = () => {
       Json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if(onlineStatus === false) return <h2>Seems you are offine, retry when you are online...!!!</h2>
 
   return (
     <div className="body">

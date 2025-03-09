@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { Menu_API } from "../utils/data";
+import useRestoMenu from "../utils/useRestoMenu";
+import { CDN_url } from "../utils/data";
 
 const RestaurantMenu = () => {
-  [resInfo, setResInfo] = useState(null);
 
-  const { id } = useParams();
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(Menu_API + id);
-
-    const json = await data.json();
-
-    // console.log("json:", json?.data?.cards);
-    setResInfo(json.data.cards);
-  };
+  const { resId } = useParams();
+  const resInfo = useRestoMenu(resId); 
 
   if (resInfo === null) {
     return (
@@ -29,25 +16,26 @@ const RestaurantMenu = () => {
     );
   }
 
+  console.log(resInfo)
   // console.log(resInfo[2].card.card.info)
   const { name, cuisines, costForTwoMessage } = resInfo[2]?.card?.card?.info;
+  const { itemCards } = resInfo[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
 
-  const { itemCards } =
-    resInfo[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
-
+  console.log(itemCards)
   return (
     <div className="menu">
       <h1>{name}</h1>
-      <p>
+      <h3>
         {cuisines.join(",")} - {costForTwoMessage}
-      </p>
+      </h3>
       <h2>Menu</h2>
       <ul>
         {itemCards.map((item) => (
-          <li key={item.card.info.id}>
-            {item.card.info.name} - Rs.
-            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-          </li>
+          <div key={item.card.info.id} style={{border:"1px solid black", margin:"10px", width:"auto", display:"flex", borderRadius:"10px"}}>
+            <img src={CDN_url + item.card.info.imageId} style={{width:"24%", height:"200px", margin:"0 10px"}}/>
+            <h2>{item.card.info.name} - </h2> 
+            <h2>- Rs.{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</h2>
+          </div>
         ))}
       </ul>
     </div>

@@ -1,12 +1,11 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDom from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
-import About from "./components/About";
+// import About from "./components/About";
 import Contacts from "./components/Contacts";
 import Error from "./components/Error";
 import Body from "./components/Body";
-import RestaurentMenu from "./components/RestaurantMenu";
 import RestaurantMenu from "./components/RestaurantMenu";
 
 // const parent = React.createElement("div", { id: "parent" }, [
@@ -28,32 +27,38 @@ import RestaurantMenu from "./components/RestaurantMenu";
 //   </div>
 // ); // JSX for multiple element
 
+const About = lazy(() => import("./components/About"));
+
 const appRouter = createBrowserRouter([
-    {
-      path:"/",
-      element: <AppLayout/>,
-      children:[
-        {
-          path:"/",
-          element:<Body />
-        },
-        {
-          path:"/about",
-          element:<About />
-        },
-        {
-          path:"/contact",
-          element:<Contacts />
-        },{
-          path:"/restaurant/:id",
-          element:<RestaurantMenu />
-        }
-      ],
-      errorElement:<Error/>
-    },
-    
-  ])
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact",
+        element: <Contacts />,
+      },
+      {
+        path: "/restaurant/:resId",
+        element: <RestaurantMenu />,
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);

@@ -131,4 +131,16 @@ Life Cycle of React component:
 ## Chapter 9
 
 - Single responsibility principle. - given each component indivisual work.
-- 
+- By this code becomes reusable, maintainable, testable. 
+
+- Created custom Hooks (functions)
+
+- App loading time reduce by using build file size and distrubuting.
+
+Also can be called as 
+  - chunking
+  - Code Spliting
+  - Dynamic Bundling
+  - Lazyy loading
+  - On Demand loading
+  - dynamic import
