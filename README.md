@@ -144,3 +144,14 @@ Also can be called as
   - Lazyy loading
   - On Demand loading
   - dynamic import
+
+
+## Chapter 10
+
+- Tailwind css
+
+## Chapter 11
+
+- Higher order components: components that take a component and returns another component (enhanced version components)
+- Pure functions: functions that doesnot modify thee code code.
+
