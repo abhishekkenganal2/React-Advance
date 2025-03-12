@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import AccordianBody from "./AccordianBody";
 
-const RestaurantCategory = ({ data }) => {
+const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
+
+  const handleClick = () => {
+    setShowIndex()
+  }
+  
   return (
     <div>
       {/* Accordian Header */}
@@ -9,7 +14,7 @@ const RestaurantCategory = ({ data }) => {
         style={{
           width: "70%",
           alignItems: "center",
-          background: "#e7e7e7",
+          background: "rgb(249 249 249)",
           padding: "10px",
           display: "flex",
           flexDirection: "column",
@@ -23,16 +28,19 @@ const RestaurantCategory = ({ data }) => {
             display: "flex",
             justifyContent: "space-between",
             width: "100%",
+            cursor:'pointer'
           }}
+          onClick={handleClick}
         >
           <span style={{ fontWeight: "bold", fontSize: "large" }}>
             {data.title} ({data.itemCards.length})
           </span>
           <span>🔽</span>
         </div>
-        <AccordianBody items={data.itemCards} />
+        {/* Accordian Body */}
+        {showItem && <AccordianBody items={data.itemCards} />}
       </div>
-      {/* Accordian Body */}
+      
     </div>
   );
 };

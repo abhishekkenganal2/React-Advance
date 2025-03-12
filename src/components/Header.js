@@ -12,12 +12,12 @@ const Header = () => {
       <div className="logo-container">
         <img className="logo" src={HeaderLogo} alt="google" />
       </div>
-      <div className="nav-items">
+      <div className="nav-items" style={{textDecoration:'none !important'}}>
         <ul>
           <li>Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
+          <li><Link to="/" style={{textDecoration:'none'}}>Home</Link></li>
+          <li><Link to="/about" style={{textDecoration:'none'}}>About Us</Link></li>
+          <li><Link to="/contact" style={{textDecoration:'none'}}>Contact Us</Link></li>
           <li>Cart</li>
           <button className="login"
             onClick={() => {

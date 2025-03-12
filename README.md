@@ -154,4 +154,7 @@ Also can be called as
 
 - Higher order components: components that take a component and returns another component (enhanced version components)
 - Pure functions: functions that doesnot modify thee code code.
+- Controlled and uncontroled components.
+- Whaat is lifting the states up.
 
+- PROPS DRILLING - context

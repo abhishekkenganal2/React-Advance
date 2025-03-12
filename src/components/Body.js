@@ -15,10 +15,6 @@ const Body = () => {
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
     const data = await fetch(Body_API);
 
@@ -33,6 +29,10 @@ const Body = () => {
     );
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   if(onlineStatus === false) return <h2>Seems you are offine, retry when you are online...!!!</h2>
 
   return (
@@ -45,6 +45,7 @@ const Body = () => {
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
+          style={{border:'none', background:'#effbff',height:'30px'}}
         />
         <button
           className="search-btn"
@@ -54,6 +55,7 @@ const Body = () => {
             );
             setFilteredList(filterData);
           }}
+          style={{border:'none', background:'#cdfbcd',borderRadius:'5px'}}
         >
           Search
         </button>
@@ -62,6 +64,7 @@ const Body = () => {
           onClick={() => {
             setFilteredList(resList.filter((res) => res.info.avgRating > 4.5));
           }}
+          style={{border:'none', background:'rgb(255 217 217)',borderRadius:'5px'}}
         >
           Top rated Restaurants
         </button>
