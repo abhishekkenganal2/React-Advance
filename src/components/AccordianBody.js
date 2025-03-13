@@ -2,7 +2,7 @@ import React from "react";
 import { CDN_url } from "../utils/data";
 
 const AccordianBody = ({ items }) => {
-  console.log(items);
+
   return (
     <div style={{ width: "100%", display: "flex", flexDirection: "column", fontFamily:'sans-serif' }}>
       {items.map((item) => (
@@ -37,12 +37,13 @@ const AccordianBody = ({ items }) => {
               </button>
             </div>
           </div>
-          <div>
-            <span style={{ fontWeight: "600" }}>{item.card.info.name}</span>
-            <p style={{ fontWeight: "600" }}>
-              Rs.
-              {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+          <div style={{width:'80%'}}>
+            <h4 style={{ fontWeight: "600" }}>{item.card.info.name}</h4>
+            <br/> 
+            <p style={{fontWeight: "600",color:'green'}}>
+              Rs.{item.card.info.price / 100 || item.card.info.defaultPrice / 100}
             </p>
+            <br/>
             <p>{item.card.info.description}</p>
           </div>
         </div>

@@ -19,8 +19,6 @@ const RestaurantMenu = () => {
   }
 
   const { name, cuisines, costForTwoMessage } = resInfo[2]?.card?.card?.info;
-  const { itemCards } =
-    resInfo[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
 
   const categories = resInfo[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
     (c) =>
@@ -29,18 +27,19 @@ const RestaurantMenu = () => {
   );
 
   return (
-    <div className="menu" style={{ margin: 30 }}>
+    <div className="menu" style={{ margin: 30,fontFamily:'sans-serif' }}>
       <h1>{name}</h1>
+      <br/>
       <h3>
         {cuisines.join(",")} - {costForTwoMessage}
       </h3>
-      <h2>Menu</h2>
+      <br/>
       {categories.map((category,index) => (
         <RestaurantCategory
           key={category?.card?.card.title}
           data={category?.card?.card}
           showItem={index === showIndex ? true : false}
-          setShowIndex={() => setShowIndex(index)}
+          setShowIndex={() => !showIndex ? setShowIndex(index): setShowIndex(!index)}
         />
       ))}
       {/* <ul>

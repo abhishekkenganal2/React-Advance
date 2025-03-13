@@ -1,12 +1,23 @@
 /* css */
+*{
+    margin: 0;
+
+}
+
 .header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    border: solid black 1px;
+    background-color: aquamarine;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .logo {
-    width: 100px;
+    width: 90px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 1px; */
 }
 
 .nav-items {
@@ -35,7 +46,7 @@
     width: 100%;
     margin: 5px;
     height: 400px;
-    box-shadow: rgb(255, 193, 122) 2px 2px 7px;
+    box-shadow: rgb(255, 193, 122) 2px 2px 10px;
     border-radius: 5px;
 }
 
@@ -78,7 +89,14 @@
 }
 
 .login{
+    cursor: pointer;
+    font-size: large;
+    font-weight: bolder;
     padding: 0 20;
+    border: 0;
+    background-color: transparent;
+    box-shadow: 0px 0px 10px coral;
+    border-radius: 10px;
 }
 
 .user-card{

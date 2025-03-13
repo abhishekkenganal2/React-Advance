@@ -5,7 +5,7 @@ import AppLayout from "./components/AppLayout";
 // import About from "./components/About";
 import Contacts from "./components/Contacts";
 import Error from "./components/Error";
-import Body from "./components/Body";
+// import Body from "./components/Body";
 import RestaurantMenu from "./components/RestaurantMenu";
 
 // const parent = React.createElement("div", { id: "parent" }, [
@@ -28,6 +28,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // ); // JSX for multiple element
 
 const About = lazy(() => import("./components/About"));
+const Body = lazy(() => import('./components/Body'))
+const RestaurantMenu = lazy(() => import('./components/RestaurantMenu'))
 
 const appRouter = createBrowserRouter([
   {
@@ -36,7 +38,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Body />
+          </Suspense>
+        ),
       },
       {
         path: "/about",
@@ -52,7 +58,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:resId",
-        element: <RestaurantMenu />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <RestaurantMenu />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <Error />,

@@ -1,10 +1,11 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 // import { restaurants } from "../utils/data";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Body_API } from "../utils/data";
 import { Link } from "react-router-dom";
 import useOnlineStatuus from "../utils/useOnlineStatuus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -32,6 +33,8 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const { setUserName,loggedInUser } = useContext(UserContext)
 
   if(onlineStatus === false) return <h2>Seems you are offine, retry when you are online...!!!</h2>
 
@@ -68,6 +71,11 @@ const Body = () => {
         >
           Top rated Restaurants
         </button>
+        <div>
+          <label>UserName:</label>
+          <input style={{padding:'10px'}}/>
+        </div>
+
       </div>
       {resList.length <= 0 || filteredList.length <= 0 ? (
         <div style={{ margin: 30 }}>
