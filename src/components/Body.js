@@ -1,4 +1,4 @@
-import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 // import { restaurants } from "../utils/data";
 import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
@@ -34,9 +34,10 @@ const Body = () => {
     fetchData();
   }, []);
 
-  const { setUserName,loggedInUser } = useContext(UserContext)
+  const { setUserName, loggedInUser } = useContext(UserContext);
 
-  if(onlineStatus === false) return <h2>Seems you are offine, retry when you are online...!!!</h2>
+  if (onlineStatus === false)
+    return <h2>Seems you are offine, retry when you are online...!!!</h2>;
 
   return (
     <div className="body">
@@ -48,7 +49,7 @@ const Body = () => {
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
-          style={{border:'none', background:'#effbff',height:'30px'}}
+          style={{ border: "none", background: "#effbff", height: "30px" }}
         />
         <button
           className="search-btn"
@@ -58,7 +59,7 @@ const Body = () => {
             );
             setFilteredList(filterData);
           }}
-          style={{border:'none', background:'#cdfbcd',borderRadius:'5px'}}
+          style={{ border: "none", background: "#cdfbcd", borderRadius: "5px" }}
         >
           Search
         </button>
@@ -67,15 +68,22 @@ const Body = () => {
           onClick={() => {
             setFilteredList(resList.filter((res) => res.info.avgRating > 4.5));
           }}
-          style={{border:'none', background:'rgb(255 217 217)',borderRadius:'5px'}}
+          style={{
+            border: "none",
+            background: "rgb(255 217 217)",
+            borderRadius: "5px",
+          }}
         >
           Top rated Restaurants
         </button>
         <div>
           <label>UserName:</label>
-          <input style={{padding:'10px'}}/>
+          <input
+            style={{ padding: "5px" }}
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
-
       </div>
       {resList.length <= 0 || filteredList.length <= 0 ? (
         <div style={{ margin: 30 }}>
@@ -84,14 +92,16 @@ const Body = () => {
       ) : (
         <div className="res-container">
           {filteredList.map((data) => (
-            <Link key={data.info.id} to={"/restaurant/" + data.info.id} style={{ textDecoration: "none",color:"black",width:"22%" }}>
-              {
-                data.info.promoted ? (
-                  <RestaurantCardPromoted resData={data} />
-                ) : (
-                  <RestaurantCard resData={data} />
-                )
-              }
+            <Link
+              key={data.info.id}
+              to={"/restaurant/" + data.info.id}
+              style={{ textDecoration: "none", color: "black", width: "22%" }}
+            >
+              {data.info.promoted ? (
+                <RestaurantCardPromoted resData={data} />
+              ) : (
+                <RestaurantCard resData={data} />
+              )}
             </Link>
           ))}
         </div>

@@ -158,3 +158,9 @@ Also can be called as
 - Whaat is lifting the states up.
 
 - PROPS DRILLING - context
+
+### createContext, contextProvider, useContext
+
+- Context can be used for usings the props from parent component to directly nested  child component.
+- It can we used for small and medium scale projects. (large scale optional)
+- Usage of states with context.
