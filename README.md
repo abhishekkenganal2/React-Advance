@@ -150,6 +150,7 @@ Also can be called as
 
 - Tailwind css
 
+
 ## Chapter 11
 
 - Higher order components: components that take a component and returns another component (enhanced version components)
@@ -164,3 +165,7 @@ Also can be called as
 - Context can be used for usings the props from parent component to directly nested  child component.
 - It can we used for small and medium scale projects. (large scale optional)
 - Usage of states with context.
+
+## Chapter 12
+
+- Redux -> works in data layer

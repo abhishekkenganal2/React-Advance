@@ -1,15 +1,10 @@
 /* css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin: 0;
-
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: aquamarine;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .logo {
@@ -76,10 +71,6 @@
 .filter-search{
     display: flex;
     margin:10px;
-    border: 'none';
-}
-
-.search-btn{
     border: 'none';
 }
 

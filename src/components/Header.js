@@ -11,7 +11,7 @@ const Header = () => {
  const {loggedInUser} = useContext(UserContext)
 
   return (
-    <header className="header">
+    <header className="flex fixed w-full bg-white items-center justify-between shadow-md">
       <div className="logo-container">
         <img className="logo" src={HeaderLogo} alt="google" />
       </div>
@@ -22,7 +22,7 @@ const Header = () => {
           <li><Link to="/about" style={{textDecoration:'none'}}>About Us</Link></li>
           <li><Link to="/contact" style={{textDecoration:'none'}}>Contact Us</Link></li>
           <li>Cart</li>
-          <button className="login"
+          <button className="border-0 rounded-md px-3"
             onClick={() => {
               loginSwitch === "Login"
                 ? setLoginSwitch("Logout")

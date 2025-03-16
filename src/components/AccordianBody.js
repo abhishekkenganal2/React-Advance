@@ -21,26 +21,14 @@ const AccordianBody = ({ items }) => {
               style={{ width: "150px",height:'130px',borderRadius:'20px' }}
             />
             <div style={{margin:'-20px 0px 0 20px'}}>
-              <button
-                style={{
-                  height: "30px",
-                  width: "100px",
-                  borderRadius: "10px",
-                  border: "none",
-                  fontWeight:'600',
-                  color: "Green",
-                  margin: "0 0 0 0px",
-                  cursor:'pointer'
-                }}
-              >
+              <button className="rounded-md mx-5 font-bold px-5 py-1 text-green-500 bg-white">
                 ADD
               </button>
             </div>
           </div>
           <div style={{width:'80%'}}>
-            <h4 style={{ fontWeight: "600" }}>{item.card.info.name}</h4>
-            <br/> 
-            <p style={{fontWeight: "600",color:'green'}}>
+            <h4 className="font-bold">{item.card.info.name}</h4>
+            <p className="text-green-500 font-bold">
               Rs.{item.card.info.price / 100 || item.card.info.defaultPrice / 100}
             </p>
             <br/>

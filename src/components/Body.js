@@ -49,29 +49,23 @@ const Body = () => {
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
-          style={{ border: "none", background: "#effbff", height: "30px" }}
+          className="border-2 p-1 rounded-md"
         />
         <button
-          className="search-btn"
+          className="bg-orange-300 border-l-purple-600 rounded-md px-3"
           onClick={() => {
             const filterData = resList.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
             setFilteredList(filterData);
           }}
-          style={{ border: "none", background: "#cdfbcd", borderRadius: "5px" }}
         >
           Search
         </button>
         <button
-          className="filter-btn"
+          className="filter-btn border-1 px-3 rounded-md bg-amber-400"
           onClick={() => {
             setFilteredList(resList.filter((res) => res.info.avgRating > 4.5));
-          }}
-          style={{
-            border: "none",
-            background: "rgb(255 217 217)",
-            borderRadius: "5px",
           }}
         >
           Top rated Restaurants
@@ -79,7 +73,7 @@ const Body = () => {
         <div>
           <label>UserName:</label>
           <input
-            style={{ padding: "5px" }}
+            className="border-2 mx-2 p-1 rounded-md"
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
           />

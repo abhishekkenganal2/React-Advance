@@ -8,12 +8,12 @@ const RestaurantCard = (props) => {
   return (
     <div className="res-card">
       <img
-        className="res-logo"
+        className="origin-center w-full h-64 object-fit"
         src={CDN_url + cloudinaryImageId}
         alt="google"
       />
-      <div className="res-card-details">
-        <h2>{name}</h2>
+      <div className="res-card-details p-4">
+        <h2 className="font-bold text-xl">{name}</h2>
         <p>{cuisines?.join(", ")}</p>
         <p>{locatily}</p>
         <p>{costForTwo}</p>
