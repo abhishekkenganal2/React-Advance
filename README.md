@@ -8,7 +8,7 @@ layoout
   - RestaurantContainer
   - RestaurentCard
 - Image
-- NAme of Restaurant, Star rating, Location, Price, delevary time
+- Name of Restaurant, Star rating, Location, Price, delevary time
  - Footer
   - Copyright
   - Links
@@ -41,6 +41,8 @@ Virtual Dom - is JS object that represents the actual DOM.
 Diff algorithm - calulates the difference between  current DOM and previous DOM and updates the DOM on every rendor cycle.
 
 A new algorithm to update the DOM came out called reconcilation algorithm.
+
+Diff Algorithm also known as Reconcilation algorithm which uses 
 
 This algorithm came in react 16, After react 16, this algorithm is known as React Fiber.
 
@@ -149,7 +151,9 @@ Also can be called as
 ## Chapter 10
 
 - Tailwind css
-
+- worked with css, its lightweight ans speed since it uses only single style while build.
+- deficult to learn in the beginning, but once learnt it's easy.
+- no need to leave jsx page to write css.
 
 ## Chapter 11
 
@@ -168,4 +172,4 @@ Also can be called as
 
 ## Chapter 12
 
-- Redux -> works in data layer
+- Redux -> works in data layer.
