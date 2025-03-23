@@ -173,3 +173,15 @@ Also can be called as
 ## Chapter 12
 
 - Redux -> works in data layer.
+Redux is not mandetory, and is not within React.
+- Redux is not only library, we have zustang.
+
+- Redux offers easy debugging.
+
+### Redux Toolkit
+  - install @redux/toolkit and react-redux
+  - Build your store.
+  - connect your store to your app.
+  - Slice (cartSlice)
+  - dispatch (action)
+  - Selector

@@ -1,7 +1,16 @@
 import React from "react";
 import { CDN_url } from "../utils/data";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const AccordianBody = ({ items }) => {
+
+  const dispatch = useDispatch()
+
+  const handleAdd = (item) => {
+    // dispatch / update a action
+    dispatch(addItem(item))
+  }
 
   return (
     <div style={{ width: "100%", display: "flex", flexDirection: "column", fontFamily:'sans-serif' }}>
@@ -21,7 +30,7 @@ const AccordianBody = ({ items }) => {
               style={{ width: "150px",height:'130px',borderRadius:'20px' }}
             />
             <div style={{margin:'-20px 0px 0 20px'}}>
-              <button className="rounded-md mx-5 font-bold px-5 py-1 text-green-500 bg-white">
+              <button className="rounded-md mx-5 font-bold px-5 py-1 text-green-500 bg-white" onClick={() => handleAdd(item)}>
                 ADD
               </button>
             </div>

@@ -26,16 +26,22 @@ const RestaurantMenu = () => {
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
 
+  // console.log("categories",categories)
+
   return (
     <div className="menu p-4">
       <h1 className="text-xl font-bold">{name}</h1>
-      <h3>{cuisines.join(",")} - {costForTwoMessage}</h3>
-      {categories.map((category,index) => (
+      <h3>
+        {cuisines.join(",")} - {costForTwoMessage}
+      </h3>
+      {categories.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card.title}
           data={category?.card?.card}
           showItem={index === showIndex ? true : false}
-          setShowIndex={() => !showIndex ? setShowIndex(index): setShowIndex(!index)}
+          setShowIndex={() =>
+            !showIndex ? setShowIndex(index) : setShowIndex(!index)
+          }
         />
       ))}
       {/* <ul>
