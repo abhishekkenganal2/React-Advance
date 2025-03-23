@@ -7,6 +7,7 @@ import Contacts from "./components/Contacts";
 import Error from "./components/Error";
 // import Body from "./components/Body";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Cart from "./components/Cart";
 
 // const parent = React.createElement("div", { id: "parent" }, [
 //   React.createElement("div", { id: "child" }, [
@@ -61,6 +62,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <RestaurantMenu />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Cart />
           </Suspense>
         ),
       },

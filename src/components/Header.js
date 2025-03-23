@@ -9,12 +9,12 @@ const Header = () => {
   const [loginSwitch, setLoginSwitch] = useState("Login");
   const onlineStatus = useOnlineStatuus();
 
- const {loggedInUser} = useContext(UserContext)
+  const { loggedInUser } = useContext(UserContext);
 
- // Subscribing to the store using a Selector hook... 
- const cartItems = useSelector((store) => store.cart.items)
+  // Subscribing to the store using a Selector hook...
+  const cartItems = useSelector((store) => store.cart.items);
 
-//  console.log("cartItems:",cartItems)
+  //  console.log("cartItems:",cartItems)
 
   return (
     <header className="flex w-full bg-white items-center justify-between shadow-md">
@@ -24,20 +24,37 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li><Link to="/" style={{textDecoration:'none'}}>Home</Link></li>
-          <li><Link to="/about" style={{textDecoration:'none'}}>About Us</Link></li>
-          <li><Link to="/contact" style={{textDecoration:'none'}}>Contact Us</Link></li>
-          <li className="font-bold">Cart - ({cartItems.length} items)</li>
-          <button className="border-0 rounded-md px-3"
+          <li>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" style={{ textDecoration: "none" }}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" style={{ textDecoration: "none" }}>
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              Cart - ({cartItems.length} items)
+            </Link>
+          </li>
+          <button
+            className="border-0 rounded-md px-3"
             onClick={() => {
               loginSwitch === "Login"
                 ? setLoginSwitch("Logout")
-                : setLoginSwitch("Login")
+                : setLoginSwitch("Login");
             }}
           >
             {loginSwitch}
           </button>
-          <li style={{fontWeight:'bold'}}>{loggedInUser}</li>
+          <li style={{ fontWeight: "bold" }}>{loggedInUser}</li>
         </ul>
       </div>
     </header>

@@ -179,9 +179,21 @@ Redux is not mandetory, and is not within React.
 - Redux offers easy debugging.
 
 ### Redux Toolkit
+  - First refer the diagram from book.
   - install @redux/toolkit and react-redux
   - Build your store.
   - connect your store to your app.
   - Slice (cartSlice)
   - dispatch (action)
   - Selector
+
+  - Redux uses ImmerJs library behind the sences to compare current state with latest state and give new state.
+  - Redux toolkit (RTK) says either mutate the state or return the new state. (check in Reduces)
+
+### Redux Dev tools
+
+  - explore everything from it.
+
+### Redux tunck
+  - Redux tunck was used in older redux.
+  - Go to redux toolkit website, check RTK query Quick start. 
