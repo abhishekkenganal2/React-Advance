@@ -197,3 +197,17 @@ Redux is not mandetory, and is not within React.
 ### Redux tunck
   - Redux tunck was used in older redux.
   - Go to redux toolkit website, check RTK query Quick start. 
+
+## Chapter 13 
+
+### Types of testing:
+  - unit testing
+  - Integration Testing
+  - End to End Testing - e2e testing
+
+!!! note
+    We will be using react testing library, which is standard testing library fo react.
+    Also react-testing library uses "Jest" in backend to work, and Jest uses Babel. 
+
+**Installation:**
+  -

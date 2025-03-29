@@ -1,0 +1,9 @@
+site_name: Documentation
+site_url: https://www.senseops.com/resources/documentation/
+
+nav : 
+  - Overview: index.md
+
+plugins:
+  - search
+  - table-reader
