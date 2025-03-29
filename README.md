@@ -219,3 +219,13 @@ Redux is not mandetory, and is not within React.
   - Final thing, configuring jest using "npx jest --init".
   - jsdom is like a browser to run the testing code. 
   - install "npm install --save-dev jest-environment-jsdom" (install jsdom library)
+
+### Start Testing
+  - create "__tests__" donder/magic folder anywhere in src and create test files.
+  - For unit testing create a separate file for component.
+  ( You will get a error message when you run the test now, so...)
+  - Install @babel/preset-react - to make jsx  work in test cases
+  - Include @babel/preset-react in the babel.config.js
+
+  Again Error occured? (TypeError: expect(...).toBeInTheDocument is not a function)
+  - Install "@testing-library/jest-dom"
