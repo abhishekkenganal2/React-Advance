@@ -210,4 +210,12 @@ Redux is not mandetory, and is not within React.
     Also react-testing library uses "Jest" in backend to work, and Jest uses Babel. 
 
 **Installation:**
-  -
+  - npm i -D @testing-library/react
+  - npm i -D jest
+  - npm install --save-dev babel-jest @babel/core @babel/preset-env (Babel dependencies)
+  - configure the babel file "babel.config.js"
+  - configure .parcelrc file to disable default babel transpilation.
+
+  - Final thing, configuring jest using "npx jest --init".
+  - jsdom is like a browser to run the testing code. 
+  - install "npm install --save-dev jest-environment-jsdom" (install jsdom library)
