@@ -229,3 +229,11 @@ Redux is not mandetory, and is not within React.
 
   Again Error occured? (TypeError: expect(...).toBeInTheDocument is not a function)
   - Install "@testing-library/jest-dom"
+
+To write the test cases, use test().
+  - first render conponent,
+  - Then write the query for it.
+  - Then assertion or expectation of test case.
+
+- Use describe() for grouping test cases. 
+ 
