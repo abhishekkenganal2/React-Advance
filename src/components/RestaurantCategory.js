@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import AccordianBody from "./AccordianBody";
 
 const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
-
   const handleClick = () => {
-    setShowIndex()
-  }
-  
+    setShowIndex();
+  };
+
   return (
     <div>
       {/* Accordian Header */}
@@ -28,7 +27,7 @@ const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
             display: "flex",
             justifyContent: "space-between",
             width: "100%",
-            cursor:'pointer'
+            cursor: "pointer",
           }}
           onClick={handleClick}
         >
@@ -40,7 +39,6 @@ const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
         {/* Accordian Body */}
         {showItem && <AccordianBody items={data.itemCards} />}
       </div>
-      
     </div>
   );
 };

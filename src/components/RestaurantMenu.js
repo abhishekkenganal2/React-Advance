@@ -1,4 +1,4 @@
-import Shimmer from "./Shimmer";
+import {AccordianShimmer, Shimmer} from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestoMenu from "../utils/useRestoMenu";
 import RestaurantCategory from "./RestaurantCategory";
@@ -10,15 +10,9 @@ const RestaurantMenu = () => {
 
   const [showIndex, setShowIndex] = useState(null);
 
-  if (resInfo === null) {
-    return (
-      <div style={{ margin: 30 }}>
-        <Shimmer />
-      </div>
-    );
-  }
-
   const { name, cuisines, costForTwoMessage } = resInfo[2]?.card?.card?.info;
+
+  console.log("cuisines",cuisines)
 
   const categories = resInfo[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
     (c) =>
@@ -26,7 +20,15 @@ const RestaurantMenu = () => {
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
 
-  // console.log("categories",categories)
+  console.log("categories",categories.length)
+
+  if (resInfo === null) {
+    return (
+      <div style={{margin: "0 200px",justifyContent:"center"}}>
+        <AccordianShimmer categories={categories.length}/>
+      </div>
+    );
+  }
 
   return (
     <div className="menu p-4">

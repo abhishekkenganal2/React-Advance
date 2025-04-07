@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Contacts = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,19 +22,23 @@ const Contacts = () => {
 
     // Dummy submission logic, you can replace this with actual form submission
     if (formData.name && formData.email && formData.message) {
-      setStatus('Message sent successfully!');
+      setStatus("Message sent successfully!");
     } else {
-      setStatus('Please fill out all fields.');
+      setStatus("Please fill out all fields.");
     }
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Contact Us</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
+          Contact Us
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-gray-600">Name</label>
+            <label htmlFor="name" className="block text-gray-600">
+              Name
+            </label>
             <input
               type="text"
               id="name"
@@ -47,7 +51,9 @@ const Contacts = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-gray-600">Email</label>
+            <label htmlFor="email" className="block text-gray-600">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -60,7 +66,9 @@ const Contacts = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-gray-600">Message</label>
+            <label htmlFor="message" className="block text-gray-600">
+              Message
+            </label>
             <textarea
               id="message"
               name="message"
@@ -81,9 +89,7 @@ const Contacts = () => {
         </form>
 
         {status && (
-          <div className="mt-4 text-center text-sm text-gray-600">
-            {status}
-          </div>
+          <div className="mt-4 text-center text-sm text-gray-600">{status}</div>
         )}
       </div>
     </div>

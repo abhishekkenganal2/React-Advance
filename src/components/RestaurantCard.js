@@ -1,10 +1,10 @@
 import { CDN_url } from "../utils/data";
 
-const RestaurantCard = (props) => {
+const     RestaurantCard = (props) => {
   const { resData } = props;
 
   // console.log("resData", resData);
-  
+
   // destructure the data from the props
   const { cloudinaryImageId, name, cuisines, locatily, costForTwo, avgRating } =
     resData?.info;
@@ -36,10 +36,10 @@ export const withPromotedLabel = (RestaurantCard) => {
     return (
       <div>
         <label>Promoted</label>
-        <RestaurantCard {...props}/>
+        <RestaurantCard {...props} />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default RestaurantCard;

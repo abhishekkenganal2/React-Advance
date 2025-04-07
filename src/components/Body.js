@@ -1,7 +1,7 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 // import { restaurants } from "../utils/data";
 import { useEffect, useState, useContext } from "react";
-import Shimmer from "./Shimmer";
+import {Shimmer} from "./Shimmer";
 import { Body_API } from "../utils/data";
 import { Link } from "react-router-dom";
 import useOnlineStatuus from "../utils/useOnlineStatuus";
