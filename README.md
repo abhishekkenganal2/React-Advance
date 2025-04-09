@@ -1,3 +1,36 @@
+## Chapter 1
+- Start with index.html, built basic hello world using html, then Js, then to start with react --->
+- Use cdn react link `https://legacy.reactjs.org/docs/cdn-links.html` put in script tag to inject react in code.
+- Check cdn links, why using, what is cdn?
+
+- Now check the index.html file...
+
+IMP QUESTION: What is library and framwork
+
+- React can work only for the small portion of the code also.
+
+ReactElement(object) => HTML(Browser understands)
+
+## Chapter 2 
+### How to Connect the repository to git.
+
+- First go to GitHub and create new repository.
+- Go to the folder in vs code and use - `git init`.
+- next - `git branch -M main`
+- `git add .`
+- `git commit -m "message"`
+- `git add origin link`
+- `git push origin main`
+If you got error then "Setup SSH".
+
+Not to Ignite the App use below commands:
+
+- `npm init`
+Packages === dependencies.
+- Most important package in project is "Bundler" -> parcel.
+- next `npm i -D parcel`, -D = Dev dependency.
+
+
 New project:-
 layoout
  - header
