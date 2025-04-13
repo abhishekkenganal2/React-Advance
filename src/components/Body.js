@@ -46,6 +46,7 @@ const Body = () => {
           type="text"
           placeholder="Search for restaurants"
           value={searchText}
+          data-testid = "searchInput"
           onChange={(e) => {
             setSearchText(e.target.value);
           }}

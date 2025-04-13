@@ -4,6 +4,8 @@ import "@testing-library/jest-dom";
 // const Contacts from "../components/Contacts";
 
 describe("Contacts Component", () => {
+
+    
     test("Testing the rendering of the contacts page.", () => {
         // This is a test to check if the contacts page renders correctly
         // You can use a testing library like React Testing Library or Enzyme to render the component

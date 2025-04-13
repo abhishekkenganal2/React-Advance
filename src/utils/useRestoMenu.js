@@ -10,7 +10,11 @@ const useRestoMenu = (resId) => {
 
   const fetchData = async () => {
     const data = await fetch(Menu_API + resId);
+
     const json = await data.json();
+    
+    console.log("json:",json)
+    
     setResInfo(json.data.cards);
   };
 

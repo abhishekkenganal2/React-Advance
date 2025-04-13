@@ -1,6 +1,6 @@
 import { CDN_url } from "../utils/data";
 
-const     RestaurantCard = (props) => {
+const RestaurantCard = (props) => {
   const { resData } = props;
 
   // console.log("resData", resData);
@@ -10,7 +10,7 @@ const     RestaurantCard = (props) => {
     resData?.info;
 
   return (
-    <div className="m-2 p-2 w-72 h-150 bg-white shadow-lg rounded-lg hover:shadow-amber-500 transition-shadow duration-300">
+    <div data-testid="resCard" className="m-2 p-2 w-72 h-150 bg-white shadow-lg rounded-lg hover:shadow-amber-500 transition-shadow duration-300">
       <img
         className="origin-center w-full h-64 object-fit"
         src={CDN_url + cloudinaryImageId}

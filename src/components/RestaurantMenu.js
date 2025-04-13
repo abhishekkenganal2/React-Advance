@@ -8,6 +8,8 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestoMenu(resId);
 
+  console.log("resId:",resId)
+
   const [showIndex, setShowIndex] = useState(null);
 
   const { name, cuisines, costForTwoMessage } = resInfo[2]?.card?.card?.info;
