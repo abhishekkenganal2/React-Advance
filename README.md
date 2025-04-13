@@ -276,6 +276,8 @@ To write the test cases, use test() or it().
 4) Worked on RestourantCard with mock data test case.
 5) Worked on Search with mock data to understand integration testing.
 
-use "jest --watch" to run the test continously.
+use "jest --watch" in package.json to run the test continously.
 
 - When using fetch, state update use always act(), which comes from react-dom/test-utils
+
+- When multiple components work together for testing, it is called integration testing.
