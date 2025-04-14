@@ -2,7 +2,8 @@ import {AccordianShimmer, Shimmer} from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestoMenu from "../utils/useRestoMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Menu_API } from "../utils/data";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
