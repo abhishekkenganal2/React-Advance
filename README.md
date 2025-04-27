@@ -19,7 +19,7 @@ ReactElement(object) => HTML(Browser understands)
 - next - `git branch -M main`
 - `git add .`
 - `git commit -m "message"`
-- `git add origin link`
+- `git remote add origin link`
 - `git push origin main`
 If you got error then "Setup SSH".
 
