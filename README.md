@@ -1,11 +1,14 @@
 ## Chapter 1
 - Start with index.html, built basic hello world using html, then Js, then to start with react --->
 - Use cdn react link `https://legacy.reactjs.org/docs/cdn-links.html` put in script tag to inject react in code.
-- Check cdn links, why using, what is cdn?
+- Check cdn links, 
+  - Content Delivery Network (CDN) is a geographically distributed network of servers that speeds up the delivery of web content by caching it closer to users
 
 - Now check the index.html file...
 
 IMP QUESTION: What is library and framwork
+
+  - When you use a **library**, you are in charge of the flow of the application. You are choosing when and where to call the library. When you use a **framework**, the framework is in charge of the flow. It provides some places for you to plug in your code, but it calls the code you plugged in as needed.
 
 - React can work only for the small portion of the code also.
 
@@ -23,16 +26,15 @@ ReactElement(object) => HTML(Browser understands)
 - `git push origin main`
 If you got error then "Setup SSH".
 
-Not to Ignite the App use below commands:
-
+Now to Ignite the App use below commands:
 - `npm init`
+
 Packages === dependencies.
 - Most important package in project is "Bundler" -> parcel.
 - next `npm i -D parcel`, -D = Dev dependency.
 
-
 New project:-
-layoout
+layout
  - header
   - logo
   - nav-items
@@ -51,7 +53,7 @@ layoout
 ## Chapter 4
 
 * Config driven UI
-* Not using keys is (not acceptable) always use the keys in map
+* Not using keys is not acceptable, always use the keys in map
 
 - types of Exports:
 
@@ -67,19 +69,20 @@ import {Resto} from "./Resto";
 ### react hooks
 - Normal JS utility function written by facebook developers.
 
-1. useState() - Superpowerful state variables in reaact.
+1. useState() - Superpowerful state variables in react.
 
 Virtual Dom - is JS object that represents the actual DOM.
 
-Diff algorithm - calulates the difference between  current DOM and previous DOM and updates the DOM on every rendor cycle.
+Diff algorithm - calculates the difference between current DOM and previous DOM and updates the DOM on every rendor cycle.
 
+React uses a process called Reconciliation.
 A new algorithm to update the DOM came out called reconcilation algorithm.
 
-Diff Algorithm also known as Reconcilation algorithm which uses 
+Diff Algorithm also known as Reconcilation algorithm which uses - 
 
 This algorithm came in react 16, After react 16, this algorithm is known as React Fiber.
 
-Now Why React is fast? because REact is doing efficent DOM manipulation. How? because it can find the difference between virtual DOM and updates the UI.
+Now Why React is fast? because React is doing efficent DOM manipulation. How? because it can find the difference between virtual DOM and updates the UI.
 
 React fiber -> [https://github.com/acdlite/react-fiber-architecture]
 
@@ -145,7 +148,6 @@ FOR THIS REASON -> React is Single Page Application.
 ### useParams
 - Helps to fetch dynamic data like "id" from API links which is passed before in router.
 
-
 ## Chapter 8
 
 - Class based components.
@@ -165,7 +167,7 @@ Life Cycle of React component:
 
 ## Chapter 9
 
-- Single responsibility principle. - given each component indivisual work.
+- Single responsibility principle. - given each component individual work.
 - By this code becomes reusable, maintainable, testable. 
 
 - Created custom Hooks (functions)
@@ -180,27 +182,26 @@ Also can be called as
   - On Demand loading
   - dynamic import
 
-
 ## Chapter 10
 
 - Tailwind css
-- worked with css, its lightweight ans speed since it uses only single style while build.
+- worked with css, its lightweight and speed since it uses only single style while build.
 - deficult to learn in the beginning, but once learnt it's easy.
 - no need to leave jsx page to write css.
 
-## Chapter 11
+## Chapter 11 
 
 - Higher order components: components that take a component and returns another component (enhanced version components)
-- Pure functions: functions that doesnot modify thee code code.
-- Controlled and uncontroled components.
-- Whaat is lifting the states up.
+- Pure functions: functions that does not modify the code.
+- Controlled and uncontrolled components.
+- What is lifting the states up.
 
 - PROPS DRILLING - context
 
 ### createContext, contextProvider, useContext
 
-- Context can be used for usings the props from parent component to directly nested  child component.
-- It can we used for small and medium scale projects. (large scale optional)
+- Context can be used for usings the props from parent component to directly nested child component.
+- It can be used for small and medium scale projects. (large scale optional)
 - Usage of states with context.
 
 ## Chapter 12
